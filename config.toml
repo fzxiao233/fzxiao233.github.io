@@ -1,4 +1,4 @@
-baseurl = "https://fzxiao233.github.io/hugo-blog"
+baseurl = "https://fzxiao233.github.io"
 languageCode = "en-us"
 theme = "hugo-theme-stack"
 paginate = 5
