@@ -1,4 +1,132 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Oct 2020 16:05:21 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao233.github.io/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao233.github.io/posts/build-blog-by-hugo/</guid><description>&lt;img src="https://fzxiao233.github.io/posts/build-blog-by-hugo/build-blog-by-hugo-logo.png" alt="Featured image of post 利用 Github Actions 和 Hugo 搭建自动化构建的静态博客" />&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 20 Oct 2020 22:35:45 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动&lt;/p>
+&lt;p>于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知&lt;/p>
+&lt;p>多说无意，好好学习，下面看题目&lt;/p>
+&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。&lt;/p>
+&lt;p>示例 1:&lt;/p>
+&lt;pre>&lt;code>输入:
+[
+[ 1, 2, 3 ],
+[ 4, 5, 6 ],
+[ 7, 8, 9 ]
+]
+输出: [1,2,3,6,9,8,7,4,5]
+&lt;/code>&lt;/pre>
+&lt;h2 id="分析">分析&lt;/h2>
+&lt;p>正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜&lt;/p>
+&lt;p>其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决&lt;/p>
+&lt;p>不妨设输入矩阵为 matrix&lt;/p>
+&lt;p>那么矩阵中的每一行下标 用 x 表示&lt;/p>
+&lt;p>该行中的的元素下标 用 y 表示&lt;/p>
+&lt;p>那么访问矩阵中的每一个元素即可表示为&lt;/p>
+&lt;pre>&lt;code>element = matrix[x][y]
+&lt;/code>&lt;/pre>
+&lt;p>按照要求，我们需要螺旋的遍历这个矩阵&lt;/p>
+&lt;p>遍历方向是 右 =&amp;gt; 下 =&amp;gt; 上 =&amp;gt; 左&lt;/p>
+&lt;p>每次碰到边界，即转向&lt;/p>
+&lt;p>循环直至完成遍历&lt;/p>
+&lt;p>定义&lt;/p>
+&lt;p>矩阵的行数 rows&lt;/p>
+&lt;p>矩阵的列数 columns&lt;/p>
+&lt;p>注意到 rows 等于矩阵数组的长度&lt;/p>
+&lt;p>columns 等于 矩阵中一行的长度&lt;/p>
+&lt;p>即&lt;/p>
+&lt;pre>&lt;code>rows := len(matrix)
+columns := len(matrix[0])
+&lt;/code>&lt;/pre>
+&lt;p>那么边界条件即为&lt;/p>
+&lt;pre>&lt;code>0 &amp;lt;= x &amp;lt; rows
+0 &amp;lt;= y &amp;lt; columns
+&lt;/code>&lt;/pre>
+&lt;p>那么向右遍历的实质是&lt;/p>
+&lt;pre>&lt;code>x = x
+y = y + 1
+&lt;/code>&lt;/pre>
+&lt;p>同理易得向下&lt;/p>
+&lt;pre>&lt;code>x = x + 1
+y = y
+&lt;/code>&lt;/pre>
+&lt;p>向左&lt;/p>
+&lt;pre>&lt;code>x = x
+y = y - 1
+&lt;/code>&lt;/pre>
+&lt;p>向上&lt;/p>
+&lt;pre>&lt;code>x = x - 1
+y = y
+&lt;/code>&lt;/pre>
+&lt;p>将方向控制抽象为两个数组&lt;/p>
+&lt;pre>&lt;code>directionX := [0, 1, 0, -1]
+directionY := [1, 0, -1, 0]
+&lt;/code>&lt;/pre>
+&lt;p>将改变方向定义为&lt;/p>
+&lt;pre>&lt;code>directionIndex = 0
+tx := x + directionX[directionIndex]
+ty := y + directionY[directionIndex]
+&lt;/code>&lt;/pre>
+&lt;p>显然 tx, ty 即为新访问坐标，那么 directionIndex 是什么&lt;/p>
+&lt;p>容易想到 directionIndex 的值 分别对应了不同的遍历方式&lt;/p>
+&lt;p>需要转向时，只需让 directionIndex 自增 以切换到下一种改变方式&lt;/p>
+&lt;p>Wait, 如果这样自增下去，directionIndex 就会越界&lt;/p>
+&lt;p>解决方案如下&lt;/p>
+&lt;pre>&lt;code>directionIndex = (directionIndex + 1) % 4
+&lt;/code>&lt;/pre>
+&lt;p>通过取模运算， 限制了 directionIndex 始终保持在方向数组的定义内&lt;/p>
+&lt;p>这样就结束了吗，显然不是&lt;/p>
+&lt;p>指针只是在最外圈打转而已，我们还需判断当前位置的元素是否已经访问过了&lt;/p>
+&lt;p>引入一个新矩阵 visited，矩阵大小与原输入矩阵大小相同，用于标记是否访问过&lt;/p>
+&lt;pre>&lt;code>visited := make([][]bool, rows)
+for i:=0; i&amp;lt;rows; i++ {
+visited[i] = make([]bool, columns)
+}
+&lt;/code>&lt;/pre>
+&lt;p>我们还需要更新边界条件&lt;/p>
+&lt;p>向原有的条件&lt;/p>
+&lt;pre>&lt;code>0 &amp;lt;= x &amp;lt; rows
+0 &amp;lt;= y &amp;lt; columns
+&lt;/code>&lt;/pre>
+&lt;p>后加入一条&lt;/p>
+&lt;pre>&lt;code>visited[x][y] != true
+&lt;/code>&lt;/pre>
+&lt;p>这样，当遇到已经遍历过的元素时，也会触发转向&lt;/p>
+&lt;p>综上述，我们来写代码&lt;/p>
+&lt;h2 id="题解">题解&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Golang" data-lang="Golang">&lt;span class="kd">func&lt;/span> &lt;span class="nf">spiralOrder&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">matrix&lt;/span> &lt;span class="p">[][]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="c1">// 定义结果数组
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">matrix&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 判空
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="nx">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">columns&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">matrix&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">matrix&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1">// 得到矩阵行，列数
+&lt;/span>&lt;span class="c1">&lt;/span>
+&lt;span class="c1">// 定义方向数组
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">directionX&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="nx">directionY&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="c1">// 定义方向变量
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">directionIndex&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;span class="c1">// 定义访问矩阵
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">visited&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([][]&lt;/span>&lt;span class="kt">bool&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">rows&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">rows&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">visited&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="kt">bool&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">columns&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="c1">// 定义访问坐标
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">y&lt;/span> &lt;span class="kt">int&lt;/span>
+&lt;span class="c1">// 遍历，循环次数等于元素个数
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">rows&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nx">columns&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">result&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">matrix&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="c1">// 将 x, y 处元素加入结果数组
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">visited&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span> &lt;span class="c1">// 设定 x, y 已被访问
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">tx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">ty&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">directionX&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">directionIndex&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">y&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">directionY&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">directionIndex&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="c1">// 获得下一访问坐标 tx, ty
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">tx&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">tx&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">rows&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">ty&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">ty&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">columns&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="p">!&lt;/span>&lt;span class="nx">visited&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">tx&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="nx">ty&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 判断边界条件
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">tx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">ty&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="c1">// 切换方向
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">directionIndex&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">directionIndex&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">directionX&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">directionIndex&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">y&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">directionY&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">directionIndex&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">result&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>涉及各种方式遍历的题目，无非就在考虑 边界条件 和 如何更改遍历方式&lt;/p></description></item><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao233.github.io/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao233.github.io/posts/build-blog-by-hugo/</guid><description>&lt;img src="https://fzxiao233.github.io/posts/build-blog-by-hugo/build-blog-by-hugo-logo.png" alt="Featured image of post 利用 Github Actions 和 Hugo 搭建自动化构建的静态博客" />&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>既然刚折腾完 Hugo，蹭着记忆还清晰，梳理一下搭建过程吧&lt;/p>
 &lt;h2 id="工具和网站介绍">工具和网站介绍&lt;/h2>
 &lt;ul>

@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Oct 2020 16:05:21 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao233.github.io/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao233.github.io/posts/build-blog-by-hugo/</guid><description>前言 既然刚折腾完 Hugo，蹭着记忆还清晰，梳理一下搭建过程吧
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 20 Oct 2020 22:35:45 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
+多说无意，好好学习，下面看题目
+题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+示例 1:
+输入: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] 输出: [1,2,3,6,9,8,7,4,5] 分析 正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜
+其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决
+不妨设输入矩阵为 matrix
+那么矩阵中的每一行下标 用 x 表示
+该行中的的元素下标 用 y 表示
+那么访问矩阵中的每一个元素即可表示为
+element = matrix[x][y] 按照要求，我们需要螺旋的遍历这个矩阵
+遍历方向是 右 =&amp;gt; 下 =&amp;gt; 上 =&amp;gt; 左
+每次碰到边界，即转向
+循环直至完成遍历
+定义
+矩阵的行数 rows</description></item><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao233.github.io/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao233.github.io/posts/build-blog-by-hugo/</guid><description>前言 既然刚折腾完 Hugo，蹭着记忆还清晰，梳理一下搭建过程吧
 工具和网站介绍 Hugo:
 号称是世界上最快静态网页构建框架(framework)
 由 Go 编写而成，用于生成我们博客所需的静态页面

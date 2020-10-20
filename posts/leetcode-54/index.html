@@ -1,0 +1,131 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
+多说无意，好好学习，下面看题目
+题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+示例 1:
+输入: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] 输出: [1,2,3,6,9,8,7,4,5]  分析 正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜
+其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决
+不妨设输入矩阵为 matrix
+那么矩阵中的每一行下标 用 x 表示
+该行中的的元素下标 用 y 表示
+那么访问矩阵中的每一个元素即可表示为
+element = matrix[x][y]  按照要求，我们需要螺旋的遍历这个矩阵
+遍历方向是 右 =&amp;gt; 下 =&amp;gt; 上 =&amp;gt; 左
+每次碰到边界，即转向
+循环直至完成遍历
+定义
+矩阵的行数 rows"><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link rel=canonical href=https://fzxiao233.github.io/posts/leetcode-54/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动"><meta property="og:description" content="背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
+多说无意，好好学习，下面看题目
+题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+示例 1:
+输入: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] 输出: [1,2,3,6,9,8,7,4,5]  分析 正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜
+其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决
+不妨设输入矩阵为 matrix
+那么矩阵中的每一行下标 用 x 表示
+该行中的的元素下标 用 y 表示
+那么访问矩阵中的每一个元素即可表示为
+element = matrix[x][y]  按照要求，我们需要螺旋的遍历这个矩阵
+遍历方向是 右 =&amp;gt; 下 =&amp;gt; 上 =&amp;gt; 左
+每次碰到边界，即转向
+循环直至完成遍历
+定义
+矩阵的行数 rows"><meta property="og:url" content="https://fzxiao233.github.io/posts/leetcode-54/"><meta property="og:site_name" content="FZxiao 的大仓库"><meta property="og:type" content="article"><meta property="article:section" content="Posts"><meta property="article:published_time" content="2020-10-20T22:35:45+08:00"><meta property="article:modified_time" content="2020-10-20T22:35:45+08:00"><meta name=twitter:site content="FZxiao233"><meta name=twitter:title content="Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动"><meta name=twitter:description content="背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
+多说无意，好好学习，下面看题目
+题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+示例 1:
+输入: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] 输出: [1,2,3,6,9,8,7,4,5]  分析 正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜
+其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决
+不妨设输入矩阵为 matrix
+那么矩阵中的每一行下标 用 x 表示
+该行中的的元素下标 用 y 表示
+那么访问矩阵中的每一个元素即可表示为
+element = matrix[x][y]  按照要求，我们需要螺旋的遍历这个矩阵
+遍历方向是 右 =&amp;gt; 下 =&amp;gt; 上 =&amp;gt; 左
+每次碰到边界，即转向
+循环直至完成遍历
+定义
+矩阵的行数 rows"></head><body class="article-page keep-sidebar"><div class="container flex on-phone--column align-items--flex-start extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header class=site-info><figure class=site-avatar><img src=/img/avatar_hu5438825b9b6d1014226d20d231e650c2_473880_300x300_resize_q75_box.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<span class=emoji>🍥</span></figure><h1 class=site-name><a href=https://fzxiao233.github.io>FZxiao 的大仓库</a></h1><h2 class=site-description>FZxiao的博客</h2></header><ol class=menu id=main-menu><li><a href=https://fzxiao233.github.io/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>主页</span></a></li><li><a href=https://fzxiao233.github.io/about-cn><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>关于</span></a></li><li><a href=https://fzxiao233.github.io/archives><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>存档</span></a></li></ol></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><h2 class=article-title><a href=https://fzxiao233.github.io/posts/leetcode-54/>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</a></h2><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Oct 20, 2020</time></footer></div></header><section class=article-content><h2 id=背景>背景</h2><p>身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动</p><p>于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知</p><p>多说无意，好好学习，下面看题目</p><h2 id=题目>题目</h2><p>给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。</p><p>示例 1:</p><pre><code>输入:
+[
+    [ 1, 2, 3 ],
+    [ 4, 5, 6 ],
+    [ 7, 8, 9 ]
+]
+输出: [1,2,3,6,9,8,7,4,5]
+</code></pre><h2 id=分析>分析</h2><p>正在面试的我，一脸懵逼，无从下手，面试官提示我这是一道很简单(本题难度中等)的题目 最后写了一点点，时间到了（菜 我 菜</p><p>其实这个题目，只需要抓住矩阵的边界条件，就可以很明朗的解决</p><p>不妨设输入矩阵为 matrix</p><p>那么矩阵中的每一行下标 用 x 表示</p><p>该行中的的元素下标 用 y 表示</p><p>那么访问矩阵中的每一个元素即可表示为</p><pre><code>element = matrix[x][y]
+</code></pre><p>按照要求，我们需要螺旋的遍历这个矩阵</p><p>遍历方向是 右 => 下 => 上 => 左</p><p>每次碰到边界，即转向</p><p>循环直至完成遍历</p><p>定义</p><p>矩阵的行数 rows</p><p>矩阵的列数 columns</p><p>注意到 rows 等于矩阵数组的长度</p><p>columns 等于 矩阵中一行的长度</p><p>即</p><pre><code>rows := len(matrix)
+
+columns := len(matrix[0])
+</code></pre><p>那么边界条件即为</p><pre><code>0 &lt;= x &lt; rows
+
+0 &lt;= y &lt; columns
+</code></pre><p>那么向右遍历的实质是</p><pre><code>x = x
+y = y + 1
+</code></pre><p>同理易得向下</p><pre><code>x = x + 1
+y = y
+</code></pre><p>向左</p><pre><code>x = x
+y = y - 1
+</code></pre><p>向上</p><pre><code>x = x - 1
+y = y
+</code></pre><p>将方向控制抽象为两个数组</p><pre><code>directionX := [0, 1, 0, -1]
+directionY := [1, 0, -1, 0]
+</code></pre><p>将改变方向定义为</p><pre><code>directionIndex = 0
+tx := x + directionX[directionIndex]
+ty := y + directionY[directionIndex]
+</code></pre><p>显然 tx, ty 即为新访问坐标，那么 directionIndex 是什么</p><p>容易想到 directionIndex 的值 分别对应了不同的遍历方式</p><p>需要转向时，只需让 directionIndex 自增 以切换到下一种改变方式</p><p>Wait, 如果这样自增下去，directionIndex 就会越界</p><p>解决方案如下</p><pre><code>directionIndex = (directionIndex + 1) % 4
+</code></pre><p>通过取模运算， 限制了 directionIndex 始终保持在方向数组的定义内</p><p>这样就结束了吗，显然不是</p><p>指针只是在最外圈打转而已，我们还需判断当前位置的元素是否已经访问过了</p><p>引入一个新矩阵 visited，矩阵大小与原输入矩阵大小相同，用于标记是否访问过</p><pre><code>visited := make([][]bool, rows)
+for i:=0; i&lt;rows; i++ {
+    visited[i] = make([]bool, columns)
+}
+</code></pre><p>我们还需要更新边界条件</p><p>向原有的条件</p><pre><code>0 &lt;= x &lt; rows
+
+0 &lt;= y &lt; columns
+</code></pre><p>后加入一条</p><pre><code>visited[x][y] != true
+</code></pre><p>这样，当遇到已经遍历过的元素时，也会触发转向</p><p>综上述，我们来写代码</p><h2 id=题解>题解</h2><div class=highlight><pre class=chroma><code class=language-Golang data-lang=Golang><span class=kd>func</span> <span class=nf>spiralOrder</span><span class=p>(</span><span class=nx>matrix</span> <span class=p>[][]</span><span class=kt>int</span><span class=p>)</span> <span class=p>[]</span><span class=kt>int</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>result</span> <span class=p>[]</span><span class=kt>int</span>  <span class=c1>// 定义结果数组
+</span><span class=c1></span>	<span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=nx>matrix</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span> <span class=p>{</span>  <span class=c1>// 判空
+</span><span class=c1></span>		<span class=k>return</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{}</span>
+    <span class=p>}</span>
+    
+    <span class=nx>rows</span><span class=p>,</span> <span class=nx>columns</span> <span class=o>:=</span> <span class=nb>len</span><span class=p>(</span><span class=nx>matrix</span><span class=p>),</span> <span class=nb>len</span><span class=p>(</span><span class=nx>matrix</span><span class=p>[</span><span class=mi>0</span><span class=p>])</span>  <span class=c1>// 得到矩阵行，列数
+</span><span class=c1></span>    
+    <span class=c1>// 定义方向数组
+</span><span class=c1></span>	<span class=nx>directionX</span> <span class=o>:=</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>}</span>
+    <span class=nx>directionY</span> <span class=o>:=</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>}</span>
+    
+    <span class=c1>// 定义方向变量
+</span><span class=c1></span>    <span class=nx>directionIndex</span> <span class=o>:=</span> <span class=mi>0</span>
+    
+    <span class=c1>// 定义访问矩阵
+</span><span class=c1></span>	<span class=nx>visited</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>([][]</span><span class=kt>bool</span><span class=p>,</span> <span class=nx>rows</span><span class=p>)</span>
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>rows</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>visited</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=p>=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>bool</span><span class=p>,</span> <span class=nx>columns</span><span class=p>)</span>
+    <span class=p>}</span>
+    
+    <span class=c1>// 定义访问坐标
+</span><span class=c1></span>    <span class=kd>var</span> <span class=nx>x</span><span class=p>,</span> <span class=nx>y</span> <span class=kt>int</span>
+    
+    <span class=c1>// 遍历，循环次数等于元素个数
+</span><span class=c1></span>	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>rows</span><span class=o>*</span><span class=nx>columns</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>result</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>result</span><span class=p>,</span> <span class=nx>matrix</span><span class=p>[</span><span class=nx>x</span><span class=p>][</span><span class=nx>y</span><span class=p>])</span>  <span class=c1>// 将 x, y 处元素加入结果数组
+</span><span class=c1></span>		<span class=nx>visited</span><span class=p>[</span><span class=nx>x</span><span class=p>][</span><span class=nx>y</span><span class=p>]</span> <span class=p>=</span> <span class=kc>true</span>  <span class=c1>// 设定 x, y 已被访问
+</span><span class=c1></span>		<span class=nx>tx</span><span class=p>,</span> <span class=nx>ty</span> <span class=o>:=</span> <span class=nx>x</span><span class=o>+</span><span class=nx>directionX</span><span class=p>[</span><span class=nx>directionIndex</span><span class=p>],</span> <span class=nx>y</span><span class=o>+</span><span class=nx>directionY</span><span class=p>[</span><span class=nx>directionIndex</span><span class=p>]</span>  <span class=c1>// 获得下一访问坐标 tx, ty
+</span><span class=c1></span>		<span class=k>if</span> <span class=mi>0</span> <span class=o>&lt;=</span> <span class=nx>tx</span> <span class=o>&amp;&amp;</span> <span class=nx>tx</span> <span class=p>&lt;</span> <span class=nx>rows</span> <span class=o>&amp;&amp;</span> <span class=mi>0</span> <span class=o>&lt;=</span> <span class=nx>ty</span> <span class=o>&amp;&amp;</span> <span class=nx>ty</span> <span class=p>&lt;</span> <span class=nx>columns</span> <span class=o>&amp;&amp;</span> <span class=p>!</span><span class=nx>visited</span><span class=p>[</span><span class=nx>tx</span><span class=p>][</span><span class=nx>ty</span><span class=p>]</span> <span class=p>{</span>  <span class=c1>// 判断边界条件
+</span><span class=c1></span>			<span class=nx>x</span><span class=p>,</span> <span class=nx>y</span> <span class=p>=</span> <span class=nx>tx</span><span class=p>,</span> <span class=nx>ty</span>
+		<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+            <span class=c1>// 切换方向
+</span><span class=c1></span>			<span class=nx>directionIndex</span> <span class=p>=</span> <span class=p>(</span><span class=nx>directionIndex</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span> <span class=o>%</span> <span class=mi>4</span>
+			<span class=nx>x</span><span class=p>,</span> <span class=nx>y</span> <span class=p>=</span> <span class=nx>x</span><span class=o>+</span><span class=nx>directionX</span><span class=p>[</span><span class=nx>directionIndex</span><span class=p>],</span> <span class=nx>y</span><span class=o>+</span><span class=nx>directionY</span><span class=p>[</span><span class=nx>directionIndex</span><span class=p>]</span>
+		<span class=p>}</span>
+	<span class=p>}</span>
+	<span class=k>return</span> <span class=nx>result</span>
+<span class=p>}</span>
+</code></pre></div><h2 id=总结>总结</h2><p>涉及各种方式遍历的题目，无非就在考虑 边界条件 和 如何更改遍历方式</p></section><footer class=article-footer><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><footer class=site-footer><section class=copyright>&copy; 2020 FZxiao 的大仓库</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=1.0.5>Stack</a></b> designed by
+<a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true style=display:none><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const customFont=document.createElement('link');customFont.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";customFont.type="text/css";customFont.rel="stylesheet";document.head.appendChild(customFont);}());</script><link rel=stylesheet href=/css/highlight/light.min.css media="(prefers-color-scheme: light)"><link rel=stylesheet href=/css/highlight/dark.min.css media="(prefers-color-scheme: dark)"></body></html>
