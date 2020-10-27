@@ -1,4 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 20 Oct 2020 22:35:45 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Oct 2020 20:09:54 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao233.github.io/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-21/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 &lt;/p>
+&lt;p>示例：&lt;/p>
+&lt;pre>&lt;code>输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4
+输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4
+&lt;/code>&lt;/pre>
+&lt;h2 id="思路--题解">思路 &amp;amp;&amp;amp; 题解&lt;/h2>
+&lt;p>这边马上想到的是遍历&lt;/p>
+&lt;p>根据所给条件&lt;/p>
+&lt;p>我们遍历两链表&lt;/p>
+&lt;p>例：&lt;/p>
+&lt;pre>&lt;code>l1 = l1.Next
+&lt;/code>&lt;/pre>
+&lt;p>为了让新链表升序，我们需要比较当前节点数据的大小&lt;/p>
+&lt;p>将更小的节点拼接在新链表上&lt;/p>
+&lt;p>这里可以写出初步框架&lt;/p>
+&lt;p>不妨设定头结点为 headNode&lt;/p>
+&lt;p>结果链表为 result&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Golang" data-lang="Golang">&lt;span class="kd">func&lt;/span> &lt;span class="nf">mergeTowLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{}&lt;/span>
+&lt;span class="nx">result&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">headNode&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="nx">l1&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="nx">l1&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="nx">l2&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="nx">headNode&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>遍历结束后&lt;/p>
+&lt;p>必然存在一个链表不为 nil&lt;/p>
+&lt;p>由于链表本身已是升序排列&lt;/p>
+&lt;p>故只需将其链接在后即可&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Golang" data-lang="Golang"> &lt;span class="kd">func&lt;/span> &lt;span class="nf">mergeTowLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{}&lt;/span>
+&lt;span class="nx">result&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">headNode&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="nx">l1&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="nx">l1&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="nx">l2&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="nx">headNode&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l2&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">headNode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">l1&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>注 由于我们是从头结点开始拼接的，故应返回头结点的下一节点&lt;/p>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>第一次写链表题目，一时间被绕在里边了，不知道怎么切换节点 wwww&lt;/p>
+&lt;p>只要把下一节点赋给当前节点变量就好了&lt;/p>
+&lt;p>或许这题用递归写更合适？&lt;/p>
+&lt;h2 id="递归解法">递归解法&lt;/h2>
+&lt;p>一个递归总要有个结束条件&lt;/p>
+&lt;p>我们的链表到底就是 nil 那么当l1, l2 两个链表都为 nil 的时候，递归应该结束&lt;/p>
+&lt;p>即&lt;/p>
+&lt;pre>&lt;code>if l1 == nil{
+return l1
+} else if l2 == nil {
+return l2
+}
+&lt;/code>&lt;/pre>
+&lt;p>再来分析递归的目的&lt;/p>
+&lt;p>我们要使得最后生成的链表头最小&lt;/p>
+&lt;p>那么递归就是找到最大值，将链表之后向前生成&lt;/p>
+&lt;p>如下代码&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Golang" data-lang="Golang"> &lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nf">mergeTwoLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l1&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nf">mergeTwoLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l2&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>距离&lt;/p>
+&lt;p>l1 = [0,1]&lt;/p>
+&lt;p>l2 = [1,2]&lt;/p>
+&lt;pre>&lt;code>&amp;lt;1&amp;gt;
+l1.Val(0) &amp;lt; l2.Val(1)
+-&amp;gt;l1.Next(1), l2(1)
+&amp;lt;2&amp;gt;
+l1.Val(1) !&amp;lt; l2.Val(1)
+-&amp;gt;l1(1), l2.Next(2)
+&amp;lt;3&amp;gt;
+l1.Val(1) &amp;lt; l2.Val(2)
+-&amp;gt; l1.Next(nil), l2(2)
+&amp;lt;4&amp;gt;
+return l2(2)
+l1.Next = l2(2)
+return l1
+l2.Next = l1(1)-&amp;gt;(2)
+return l2
+l1.Next = l2(1)-&amp;gt;l1(1)-&amp;gt;l2(2)
+return l1
+l1 = l1(0)-&amp;gt;l2(1)-&amp;gt;l1(1)-&amp;gt;l2(2)
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>-&amp;gt; 后表示传递给递归函数的值&lt;/p>
+&lt;/blockquote>
+&lt;p>完全代码如下&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Golang" data-lang="Golang">&lt;span class="kd">func&lt;/span> &lt;span class="nf">mergeTwoLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">ListNode&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l2&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="nx">l2&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l1&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Val&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nf">mergeTwoLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l1&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nf">mergeTwoLists&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">l1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">l2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Next&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">l2&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>递归是一种自顶而下的方法，我也觉得有些难懂，但多加练习，一定会变好的&lt;/p></description></item><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动&lt;/p>
 &lt;p>于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知&lt;/p>
 &lt;p>多说无意，好好学习，下面看题目&lt;/p>

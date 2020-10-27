@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 20 Oct 2020 22:35:45 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Oct 2020 20:09:54 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao233.github.io/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-21/</guid><description>题目 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例：
+输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 思路 &amp;amp;&amp;amp; 题解 这边马上想到的是遍历
+根据所给条件
+我们遍历两链表
+例：
+l1 = l1.Next 为了让新链表升序，我们需要比较当前节点数据的大小
+将更小的节点拼接在新链表上
+这里可以写出初步框架
+不妨设定头结点为 headNode
+结果链表为 result
+func mergeTowLists(l1 *ListNode, l2 *ListNode) *ListNode { headNode := &amp;amp;ListNode{} result := headNode for l1 != nil &amp;amp;&amp;amp; l2 != nil { if l1.Val &amp;lt;= l2.Val { headNode.Next = &amp;amp;ListNode{Val:l1.Val} l1 = l1.Next } else { headNode.Next = &amp;amp;ListNode{Val:l2.Val} l2 = l2.Next } headNode = headNode.</description></item><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
 于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
 多说无意，好好学习，下面看题目
 题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
