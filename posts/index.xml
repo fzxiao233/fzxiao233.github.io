@@ -1,5 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Oct 2020 20:09:54 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao233.github.io/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-21/</guid><description>题目 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例：
-输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 思路 &amp;amp;&amp;amp; 题解 这边马上想到的是遍历
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 29 Oct 2020 13:21:42 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 20 有效的括号</title><link>https://fzxiao233.github.io/posts/leetcode-20/</link><pubDate>Thu, 29 Oct 2020 13:21:42 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-20/</guid><description>题目 给定一个只包括 &amp;lsquo;('，')'，'{'，'}'，'['，']&amp;rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+注意空字符串可被认为是有效字符串。
+示例 1:
+输入: &amp;quot;()&amp;quot; 输出: true 示例 2:
+输入: &amp;quot;()[]{}&amp;quot; 输出: true 示例 3:
+输入: &amp;quot;(]&amp;quot; 输出: false 示例 4:
+输入: &amp;quot;([)]&amp;quot; 输出: false 示例 5:
+输入: &amp;quot;{[]}&amp;quot; 输出: true 思路 我们先分析一个有效的括号有什么特点
+显然需要满足
+同种类型括号配对 如 ( ) { } 括号闭合顺序一致 如 ([]) 而不是 (][) 通过分析以上几点我们得出
+这个字符串的长度应该是 2 的倍数
+显而易见，不是 2 的倍数的字符串里的括号一定不闭合
+先出现的括号要在最后闭合</description></item><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao233.github.io/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-21/</guid><description>题目 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例：
+输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 思路 &amp;amp;&amp;amp; 题解 这里我马上想到的是遍历
 根据所给条件
 我们遍历两链表
 例：
