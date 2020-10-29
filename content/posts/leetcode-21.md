@@ -16,7 +16,7 @@ draft: false
 
 ## 思路 && 题解
 
-这边马上想到的是遍历
+这里我马上想到的是遍历
 
 根据所给条件
 
@@ -133,7 +133,7 @@ func mergeTowLists(l1 *ListNode, l2 *ListNode) *ListNode {
     }
 ```
 
-距离
+举例
 
 l1 = [0,1]
 
