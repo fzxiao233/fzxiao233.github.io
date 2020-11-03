@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 31 Oct 2020 10:47:46 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 70 爬楼梯</title><link>https://fzxiao233.github.io/posts/leetcode-70/</link><pubDate>Sat, 31 Oct 2020 10:47:46 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-70/</guid><description>题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Nov 2020 07:46:37 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 101 对称二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-101/</link><pubDate>Tue, 03 Nov 2020 07:46:37 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-101/</guid><description>题目 给定一个二叉树，检查它是否是镜像对称的。
+ 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+1 / \ 2 2 / \ / \ 3 4 4 3  但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+1 / \ 2 2 \ \ 3 3 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/symmetric-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+思路分析 一个对称的二叉树具有以下几点性质
+节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等） 节点 p 左孩子与 节点 q 右孩子相等 节点 p 右孩子与 节点 q 左孩子相等 这里我们选用递归来写
+public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件</description></item><item><title>Leetcode 70 爬楼梯</title><link>https://fzxiao233.github.io/posts/leetcode-70/</link><pubDate>Sat, 31 Oct 2020 10:47:46 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-70/</guid><description>题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
 注意：给定 n 是一个正整数。
 示例 1：

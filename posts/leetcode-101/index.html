@@ -1,0 +1,105 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目 给定一个二叉树，检查它是否是镜像对称的。
+ 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+ 1 / \ 2 2 / \ / \ 3 4 4 3   但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+ 1 / \ 2 2 \ \ 3 3   来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/symmetric-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 思路分析 一个对称的二叉树具有以下几点性质
+ 节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等） 节点 p 左孩子与 节点 q 右孩子相等 节点 p 右孩子与 节点 q 左孩子相等  这里我们选用递归来写
+public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件"><title>Leetcode 101 对称二叉树</title><link rel=canonical href=https://fzxiao233.github.io/posts/leetcode-101/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Leetcode 101 对称二叉树"><meta property="og:description" content="题目 给定一个二叉树，检查它是否是镜像对称的。
+ 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+ 1 / \ 2 2 / \ / \ 3 4 4 3   但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+ 1 / \ 2 2 \ \ 3 3   来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/symmetric-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 思路分析 一个对称的二叉树具有以下几点性质
+ 节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等） 节点 p 左孩子与 节点 q 右孩子相等 节点 p 右孩子与 节点 q 左孩子相等  这里我们选用递归来写
+public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件"><meta property="og:url" content="https://fzxiao233.github.io/posts/leetcode-101/"><meta property="og:site_name" content="FZxiao 的大仓库"><meta property="og:type" content="article"><meta property="article:section" content="Posts"><meta property="article:published_time" content="2020-11-03T07:46:37+08:00"><meta property="article:modified_time" content="2020-11-03T07:46:37+08:00"><meta name=twitter:site content="FZxiao233"><meta name=twitter:title content="Leetcode 101 对称二叉树"><meta name=twitter:description content="题目 给定一个二叉树，检查它是否是镜像对称的。
+ 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+ 1 / \ 2 2 / \ / \ 3 4 4 3   但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+ 1 / \ 2 2 \ \ 3 3   来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/symmetric-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 思路分析 一个对称的二叉树具有以下几点性质
+ 节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等） 节点 p 左孩子与 节点 q 右孩子相等 节点 p 右孩子与 节点 q 左孩子相等  这里我们选用递归来写
+public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件"></head><body class="article-page keep-sidebar"><div class="container flex on-phone--column align-items--flex-start extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header class=site-info><figure class=site-avatar><img src=/img/avatar_hu5438825b9b6d1014226d20d231e650c2_473880_300x300_resize_q75_box.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<span class=emoji>🍥</span></figure><h1 class=site-name><a href=https://fzxiao233.github.io>FZxiao 的大仓库</a></h1><h2 class=site-description>FZxiao的博客</h2></header><ol class=menu id=main-menu><li><a href=https://fzxiao233.github.io/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>主页</span></a></li><li><a href=https://fzxiao233.github.io/about-cn><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>关于</span></a></li><li><a href=https://fzxiao233.github.io/archives><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>存档</span></a></li></ol></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><h2 class=article-title><a href=https://fzxiao233.github.io/posts/leetcode-101/>Leetcode 101 对称二叉树</a></h2><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Nov 03, 2020</time></footer></div></header><section class=article-content><h2 id=题目>题目</h2><p>给定一个二叉树，检查它是否是镜像对称的。</p><p> </p><p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p><pre><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre><p> </p><p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p><pre><code>    1
+   / \
+  2   2
+   \   \
+    3    3
+</code></pre><blockquote><p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/symmetric-tree
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p></blockquote><h2 id=思路分析>思路分析</h2><p>一个对称的二叉树具有以下几点性质</p><ol><li>节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等）</li><li>节点 p 左孩子与 节点 q 右孩子相等</li><li>节点 p 右孩子与 节点 q 左孩子相等</li></ol><p>这里我们选用递归来写</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>check</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>p</span><span class=o>,</span> <span class=n>TreeNode</span> <span class=n>q</span><span class=o>)</span> <span class=o>{</span>
+
+<span class=o>}</span>
+</code></pre></div><p>明确递归跳出的条件</p><ol><li><p>节点均为 null 时返回 true</p><p>此时该节点显然对称</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=k>if</span> <span class=o>(</span><span class=n>p</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>q</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div></li><li><p>节点仅有一个为 null 时返回 false</p><p>显然此时不对称</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=k>if</span> <span class=o>(</span><span class=n>p</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>||</span> <span class=n>q</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+   <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div></li><li><p>当前节点的值相等，且满足对称二叉树的 2，3 条性质</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=k>return</span> <span class=n>p</span><span class=o>.</span><span class=na>val</span> <span class=o>==</span> <span class=n>q</span><span class=o>.</span><span class=na>val</span> <span class=o>&amp;&amp;</span> <span class=n>check</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>left</span><span class=o>,</span> <span class=n>q</span><span class=o>.</span><span class=na>right</span><span class=o>)</span> <span class=o>&amp;&amp;</span> <span class=n>check</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>right</span><span class=o>,</span> <span class=n>q</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+</code></pre></div></li></ol><p>下面看完整题解</p><h2 id=题解>题解</h2><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=cm>/**
+</span><span class=cm> * Definition for a binary tree node.
+</span><span class=cm> * public class TreeNode {
+</span><span class=cm> *     int val;
+</span><span class=cm> *     TreeNode left;
+</span><span class=cm> *     TreeNode right;
+</span><span class=cm> *     TreeNode(int x) { val = x; }
+</span><span class=cm> * }
+</span><span class=cm> */</span>
+<span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>isSymmetric</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>root</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>check</span><span class=o>(</span><span class=n>root</span><span class=o>,</span> <span class=n>root</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>check</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>p</span><span class=o>,</span> <span class=n>TreeNode</span> <span class=n>q</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>if</span> <span class=o>(</span><span class=n>p</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>q</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+        <span class=o>}</span>
+        <span class=k>if</span> <span class=o>(</span><span class=n>p</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>||</span> <span class=n>q</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+        <span class=o>}</span>
+        <span class=k>return</span> <span class=n>p</span><span class=o>.</span><span class=na>val</span> <span class=o>==</span> <span class=n>q</span><span class=o>.</span><span class=na>val</span> <span class=o>&amp;&amp;</span> <span class=n>check</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>left</span><span class=o>,</span> <span class=n>q</span><span class=o>.</span><span class=na>right</span><span class=o>)</span> <span class=o>&amp;&amp;</span> <span class=n>check</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>right</span><span class=o>,</span> <span class=n>q</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h2 id=总结>总结</h2><p>这个题目摆明了就是让你递归，只要明确了二叉树对称的性质，即可轻松解题</p><p>能用递归解决的问题，大部分也能用含有辅助栈的迭代解决</p><h2 id=迭代解法>迭代解法</h2><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=cm>/**
+</span><span class=cm> * Definition for a binary tree node.
+</span><span class=cm> * public class TreeNode {
+</span><span class=cm> *     int val;
+</span><span class=cm> *     TreeNode left;
+</span><span class=cm> *     TreeNode right;
+</span><span class=cm> *     TreeNode(int x) { val = x; }
+</span><span class=cm> * }
+</span><span class=cm> */</span>
+<span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>isSymmetric</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>root</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>check</span><span class=o>(</span><span class=n>root</span><span class=o>,</span> <span class=n>root</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>check</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>u</span><span class=o>,</span> <span class=n>TreeNode</span> <span class=n>v</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>Queue</span><span class=o>&lt;</span><span class=n>TreeNode</span><span class=o>&gt;</span> <span class=n>queue</span> <span class=o>=</span> <span class=k>new</span> <span class=n>LinkedList</span><span class=o>&lt;&gt;();</span>
+        <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>u</span><span class=o>);</span>
+        <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>v</span><span class=o>);</span>
+        <span class=k>while</span><span class=o>(!</span><span class=n>queue</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>())</span> <span class=o>{</span>
+            <span class=n>u</span> <span class=o>=</span> <span class=n>queue</span><span class=o>.</span><span class=na>poll</span><span class=o>();</span>
+            <span class=n>v</span> <span class=o>=</span> <span class=n>queue</span><span class=o>.</span><span class=na>poll</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>u</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>v</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+                <span class=k>continue</span><span class=o>;</span>
+            <span class=o>}</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>u</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>||</span> <span class=n>v</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>||</span> <span class=n>u</span><span class=o>.</span><span class=na>val</span> <span class=o>!=</span> <span class=n>v</span><span class=o>.</span><span class=na>val</span><span class=o>)</span> <span class=o>{</span>
+                <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+            <span class=o>}</span>
+            <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>u</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+            <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>v</span><span class=o>.</span><span class=na>right</span><span class=o>);</span>
+            <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>u</span><span class=o>.</span><span class=na>right</span><span class=o>);</span>
+            <span class=n>queue</span><span class=o>.</span><span class=na>offer</span><span class=o>(</span><span class=n>v</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+        <span class=o>}</span>
+        <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>其实本质和递归是一样的，因为递归其实自带了函数栈</p><p>我们每次判断后将一对子节点压入栈中</p><p>迭代的取出并判断</p><p>最终栈元素为零时，改二叉树就对称</p><p>否则就会在判断过程中被提前返回</p></section><footer class=article-footer><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><footer class=site-footer><section class=copyright>&copy; 2020 FZxiao 的大仓库</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=1.0.5>Stack</a></b> designed by
+<a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true style=display:none><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const customFont=document.createElement('link');customFont.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";customFont.type="text/css";customFont.rel="stylesheet";document.head.appendChild(customFont);}());</script><link rel=stylesheet href=/css/highlight/light.min.css media="(prefers-color-scheme: light)"><link rel=stylesheet href=/css/highlight/dark.min.css media="(prefers-color-scheme: dark)"></body></html>
