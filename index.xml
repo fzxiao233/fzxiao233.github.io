@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Nov 2020 07:46:37 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 101 对称二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-101/</link><pubDate>Tue, 03 Nov 2020 07:46:37 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-101/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Nov 2020 10:43:58 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 104 二叉树的最大深度</title><link>https://fzxiao233.github.io/posts/leetcode-104/</link><pubDate>Wed, 04 Nov 2020 10:43:58 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-104/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>给定一个二叉树，找出其最大深度。&lt;/p>
+&lt;p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。&lt;/p>
+&lt;p>说明: 叶子节点是指没有子节点的节点。&lt;/p>
+&lt;p>示例：
+给定二叉树 [3,9,20,null,null,15,7]，&lt;/p>
+&lt;pre>&lt;code> 3
+/ \
+9 20
+/ \
+15 7
+&lt;/code>&lt;/pre>
+&lt;p>返回它的最大深度 3 。&lt;/p>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="思路">思路&lt;/h2>
+&lt;p>看见二叉树，我就写递归（&lt;/p>
+&lt;p>首先，我们要求的是二叉树的最大深度&lt;/p>
+&lt;p>这最大深度是怎么构成的呢&lt;/p>
+&lt;p>最大深度 = max{最大左深度，最大右深度} + 1&lt;/p>
+&lt;p>而计算左右深度的方法是相同的&lt;/p>
+&lt;p>那么就很容易的写出一个递归函数用于给出最大深度&lt;/p>
+&lt;h2 id="题解">题解&lt;/h2>
+&lt;p>定义递归函数 search(TreeNode p) 给出的是节点 p 的最大深度&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="cm">/**
+&lt;/span>&lt;span class="cm"> * Definition for a binary tree node.
+&lt;/span>&lt;span class="cm"> * public class TreeNode {
+&lt;/span>&lt;span class="cm"> * int val;
+&lt;/span>&lt;span class="cm"> * TreeNode left;
+&lt;/span>&lt;span class="cm"> * TreeNode right;
+&lt;/span>&lt;span class="cm"> * TreeNode(int x) { val = x; }
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">maxDepth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">search&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">search&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">val&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">ans&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">val&lt;/span>&lt;span class="o">++;&lt;/span>
+&lt;span class="n">ans&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">val&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">search&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">left&lt;/span>&lt;span class="o">),&lt;/span> &lt;span class="n">val&lt;/span> &lt;span class="o">+&lt;/span>&lt;span class="n">search&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">right&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">ans&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>细细一想写了很多废话&lt;/p>
+&lt;p>二稿&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="cm">/**
+&lt;/span>&lt;span class="cm"> * Definition for a binary tree node.
+&lt;/span>&lt;span class="cm"> * public class TreeNode {
+&lt;/span>&lt;span class="cm"> * int val;
+&lt;/span>&lt;span class="cm"> * TreeNode left;
+&lt;/span>&lt;span class="cm"> * TreeNode right;
+&lt;/span>&lt;span class="cm"> * TreeNode(int x) { val = x; }
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">maxDepth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">root&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">maxDepth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">left&lt;/span>&lt;span class="o">),&lt;/span> &lt;span class="n">maxDepth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">right&lt;/span>&lt;span class="o">))&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>二叉树我就是递归，明确递归函数的定义即可秒杀&lt;/p></description></item><item><title>Leetcode 101 对称二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-101/</link><pubDate>Tue, 03 Nov 2020 07:46:37 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-101/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>给定一个二叉树，检查它是否是镜像对称的。&lt;/p>
 &lt;p> &lt;/p>
 &lt;p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。&lt;/p>
