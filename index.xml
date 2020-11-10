@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 07 Nov 2020 19:10:44 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 617 合并二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-617/</link><pubDate>Sat, 07 Nov 2020 19:10:44 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-617/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Nov 2020 09:40:11 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;pre>&lt;code>给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+ 
+示例 :
+给定二叉树
+1
+/ \
+2 3
+/ \
+4 5
+返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。
+ 
+注意：两结点之间的路径长度是以它们之间边的数目表示。
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/diameter-of-binary-tree
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分析">分析&lt;/h2>
+&lt;p>题目给出 二叉树的直径 是 任意两个结点路径长度的最大值&lt;/p>
+&lt;p>原问题等价于 求二叉树 以任意结点所能得到的最大路径&lt;/p>
+&lt;p>路径长度 等于 该节点的左深度L 与 右深度R 的和 加一（加上当前根节点）&lt;/p>
+&lt;p>我们表示为 Dnode = L + R + 1&lt;/p>
+&lt;p>我们所求的答案就是 Dnode 的最大值&lt;/p>
+&lt;h2 id="题解">题解&lt;/h2>
+&lt;p>首先，我们定义一个全局变量 ans 表示最终答案, 并将其初始化为1&lt;/p>
+&lt;p>最终答案为 ans - 1&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span>&lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">ans&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">diameterOfBinaryTree&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">ans&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">ans&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后我们定义一个新函数 depth 用于求出最大左右深度: L, R&lt;/p>
+&lt;p>同时更新 ans 的结果&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java"> &lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">L&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">left&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">right&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="n">ans&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ans&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">L&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">L&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">R&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>在原函数上加上调用即可&lt;/p>
+&lt;p>全解如下:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="cm">/**
+&lt;/span>&lt;span class="cm"> * Definition for a binary tree node.
+&lt;/span>&lt;span class="cm"> * public class TreeNode {
+&lt;/span>&lt;span class="cm"> * int val;
+&lt;/span>&lt;span class="cm"> * TreeNode left;
+&lt;/span>&lt;span class="cm"> * TreeNode right;
+&lt;/span>&lt;span class="cm"> * TreeNode(int x) { val = x; }
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">ans&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">diameterOfBinaryTree&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">root&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">ans&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">root&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">ans&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">TreeNode&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">L&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span>&lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">L&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">left&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="n">R&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">depth&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">right&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="n">ans&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ans&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">L&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">Math&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">max&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">L&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">R&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>本题需要注意条件的转换&lt;/p>
+&lt;p>求最大值问题可以通过不断更新所求值来实现&lt;/p></description></item><item><title>Leetcode 617 合并二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-617/</link><pubDate>Sat, 07 Nov 2020 19:10:44 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-617/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;pre>&lt;code>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。
 示例 1:
