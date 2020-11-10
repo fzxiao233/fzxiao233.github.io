@@ -1,7 +1,7 @@
 ---
-title: "Leetcode 543 二叉树的路径"
-date: 2020-11-08T09:56:38+08:00
-draft: false
+title: "Leetcode 543 二叉树的直径"
+date: 2020-11-10T09:40:11+08:00
+draft:  false
 ---
 
 ## 题目
