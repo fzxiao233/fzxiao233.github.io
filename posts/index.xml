@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao233.github.io/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-136/</guid><description>题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao.top/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-136/</guid><description>题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 说明：
 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 示例 1:
@@ -8,7 +8,7 @@
 class Solution { public int singleNumber(int[] nums) { int t = 0; for (int num : nums) { t = t ^ num; } return t; } } 上述出现的符号 ^ 代表了 异或运算(XOR)
 这个运算的特点是 同值取零 异值取一
 有几个重要的法则
-归零律： a ^ a = 0</description></item><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>题目 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。 示例 : 给定二叉树 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。 注意：两结点之间的路径长度是以它们之间边的数目表示。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+归零律： a ^ a = 0</description></item><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao.top/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-543/</guid><description>题目 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。 示例 : 给定二叉树 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。 注意：两结点之间的路径长度是以它们之间边的数目表示。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 分析 题目给出 二叉树的直径 是 任意两个结点路径长度的最大值
 原问题等价于 求二叉树 以任意结点所能得到的最大路径
 路径长度 等于 该节点的左深度L 与 右深度R 的和 加一（加上当前根节点）
@@ -16,13 +16,13 @@ class Solution { public int singleNumber(int[] nums) { int t = 0; for (int num :
 我们所求的答案就是 Dnode 的最大值
 题解 首先，我们定义一个全局变量 ans 表示最终答案, 并将其初始化为1
 最终答案为 ans - 1
-class Solution{ int ans; public int diameterOfBinaryTree(TreeNode root) { ans = 1; return ans - 1; } } 然后我们定义一个新函数 depth 用于求出最大左右深度: L, R</description></item><item><title>Leetcode 617 合并二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-617/</link><pubDate>Sat, 07 Nov 2020 19:10:44 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-617/</guid><description>题目 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。 示例 1: 输入: Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7 输出: 合并后的树: 3 / \ 4 5 / \ \ 5 4 7 注意: 合并必须从两个树的根节点开始。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/merge-two-binary-trees 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+class Solution{ int ans; public int diameterOfBinaryTree(TreeNode root) { ans = 1; return ans - 1; } } 然后我们定义一个新函数 depth 用于求出最大左右深度: L, R</description></item><item><title>Leetcode 617 合并二叉树</title><link>https://fzxiao.top/posts/leetcode-617/</link><pubDate>Sat, 07 Nov 2020 19:10:44 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-617/</guid><description>题目 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。 示例 1: 输入: Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7 输出: 合并后的树: 3 / \ 4 5 / \ \ 5 4 7 注意: 合并必须从两个树的根节点开始。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/merge-two-binary-trees 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 思路 只需要同时遍历两颗二叉树
 让当前节点值相加即可
 如果有一节点为 null 直接返回另一节点
 当节点均为 null 时结束
 下面上递归
-题解 /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mergeTrees(TreeNode t1, TreeNode t2) { if (t1 == null &amp;amp;&amp;amp; t2 == null) { return null; } if (t1 == null) { return t2; } else if (t2 == null) { return t1; } t1.</description></item><item><title>Leetcode 226 翻转二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-226/</link><pubDate>Thu, 05 Nov 2020 08:47:55 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-226/</guid><description>题目 翻转一棵二叉树。
+题解 /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public TreeNode mergeTrees(TreeNode t1, TreeNode t2) { if (t1 == null &amp;amp;&amp;amp; t2 == null) { return null; } if (t1 == null) { return t2; } else if (t2 == null) { return t1; } t1.</description></item><item><title>Leetcode 226 翻转二叉树</title><link>https://fzxiao.top/posts/leetcode-226/</link><pubDate>Thu, 05 Nov 2020 08:47:55 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-226/</guid><description>题目 翻转一棵二叉树。
 示例：
 输入：
 4 / \ 2 7 / \ / \ 1 3 6 9 输出：
@@ -37,7 +37,7 @@ class Solution{ int ans; public int diameterOfBinaryTree(TreeNode root) { ans = 
 结束条件是
 if (root == null) return root; 互换就很简单了不解释
 完整解答
-public TreeNode invertTree(TreeNode root) { TreeNode result = root; if (root == null) { return result; } root.</description></item><item><title>Leetcode 104 二叉树的最大深度</title><link>https://fzxiao233.github.io/posts/leetcode-104/</link><pubDate>Wed, 04 Nov 2020 10:43:58 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-104/</guid><description>题目 给定一个二叉树，找出其最大深度。
+public TreeNode invertTree(TreeNode root) { TreeNode result = root; if (root == null) { return result; } root.</description></item><item><title>Leetcode 104 二叉树的最大深度</title><link>https://fzxiao.top/posts/leetcode-104/</link><pubDate>Wed, 04 Nov 2020 10:43:58 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-104/</guid><description>题目 给定一个二叉树，找出其最大深度。
 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
 说明: 叶子节点是指没有子节点的节点。
 示例： 给定二叉树 [3,9,20,null,null,15,7]，
@@ -50,20 +50,20 @@ public TreeNode invertTree(TreeNode root) { TreeNode result = root; if (root == 
 而计算左右深度的方法是相同的
 那么就很容易的写出一个递归函数用于给出最大深度
 题解 定义递归函数 search(TreeNode p) 给出的是节点 p 的最大深度
-/** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public int maxDepth(TreeNode root) { return search(root); } public int search(TreeNode p) { int val = 0; int ans = 0; if (p == null) { return 0; } val++; ans += Math.</description></item><item><title>Leetcode 101 对称二叉树</title><link>https://fzxiao233.github.io/posts/leetcode-101/</link><pubDate>Tue, 03 Nov 2020 07:46:37 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-101/</guid><description>题目 给定一个二叉树，检查它是否是镜像对称的。
+/** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public int maxDepth(TreeNode root) { return search(root); } public int search(TreeNode p) { int val = 0; int ans = 0; if (p == null) { return 0; } val++; ans += Math.</description></item><item><title>Leetcode 101 对称二叉树</title><link>https://fzxiao.top/posts/leetcode-101/</link><pubDate>Tue, 03 Nov 2020 07:46:37 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-101/</guid><description>题目 给定一个二叉树，检查它是否是镜像对称的。
  例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
 1 / \ 2 2 / \ / \ 3 4 4 3  但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
 1 / \ 2 2 \ \ 3 3 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/symmetric-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 思路分析 一个对称的二叉树具有以下几点性质
 节点 p,q 的值相等（第一步即 root 节点自身比较，显然相等） 节点 p 左孩子与 节点 q 右孩子相等 节点 p 右孩子与 节点 q 左孩子相等 这里我们选用递归来写
-public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件</description></item><item><title>Leetcode 70 爬楼梯</title><link>https://fzxiao233.github.io/posts/leetcode-70/</link><pubDate>Sat, 31 Oct 2020 10:47:46 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-70/</guid><description>题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件</description></item><item><title>Leetcode 70 爬楼梯</title><link>https://fzxiao.top/posts/leetcode-70/</link><pubDate>Sat, 31 Oct 2020 10:47:46 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-70/</guid><description>题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
 注意：给定 n 是一个正整数。
 示例 1：
 输入： 2 输出： 2 解释： 有两种方法可以爬到楼顶。 1. 1 阶 + 1 阶 2. 2 阶 示例 2：
 输入： 3 输出： 3 解释： 有三种方法可以爬到楼顶。 1. 1 阶 + 1 阶 + 1 阶 2. 1 阶 + 2 阶 3. 2 阶 + 1 阶 思路分析 这是一道动态规划题
 我们先确定 dp[i] 的含义
-本题中，我们定义 dp[i] 为爬上第 i 阶楼梯的方法数目</description></item><item><title>Leetcode 53 最大子序和</title><link>https://fzxiao233.github.io/posts/leetcode-53/</link><pubDate>Fri, 30 Oct 2020 10:46:00 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-53/</guid><description>题目 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+本题中，我们定义 dp[i] 为爬上第 i 阶楼梯的方法数目</description></item><item><title>Leetcode 53 最大子序和</title><link>https://fzxiao.top/posts/leetcode-53/</link><pubDate>Fri, 30 Oct 2020 10:46:00 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-53/</guid><description>题目 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 示例:
 输入: [-2,1,-3,4,-1,2,1,-5,4] 输出: 6 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 思路 这是一道动态规划题目，按照一般步骤，我们需要定义 dp[i] 的意义
 在这题中 dp[i] 被定义为 以nums[i]结尾的最大子序和
@@ -72,7 +72,7 @@ public boolean check(TreeNode p, TreeNode q) { } 明确递归跳出的条件</de
 dp[i] = dp[i-1] + nums[i] OR dp[i] = nums[i] 那么写出状态转移方程 dp[i] = max{dp[i-1] + nums[i], nums[i]}
 最终答案就是 dp[0&amp;hellip;i] 中最大的一个值
 我们利用遍历得出即可
-题解 class Solution { public int maxSubArray(int[] nums) { int length = nums.length; int[] dp = new int[length]; dp[0] = nums[0]; for (int i=1; i&amp;lt;length; i++) { dp[i] = Math.</description></item><item><title>Leetcode 20 有效的括号</title><link>https://fzxiao233.github.io/posts/leetcode-20/</link><pubDate>Thu, 29 Oct 2020 13:21:42 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-20/</guid><description>题目 给定一个只包括 &amp;lsquo;('，')'，'{'，'}'，'['，']&amp;rsquo; 的字符串，判断字符串是否有效。
+题解 class Solution { public int maxSubArray(int[] nums) { int length = nums.length; int[] dp = new int[length]; dp[0] = nums[0]; for (int i=1; i&amp;lt;length; i++) { dp[i] = Math.</description></item><item><title>Leetcode 20 有效的括号</title><link>https://fzxiao.top/posts/leetcode-20/</link><pubDate>Thu, 29 Oct 2020 13:21:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-20/</guid><description>题目 给定一个只包括 &amp;lsquo;('，')'，'{'，'}'，'['，']&amp;rsquo; 的字符串，判断字符串是否有效。
 有效字符串需满足：
 左括号必须用相同类型的右括号闭合。
 左括号必须以正确的顺序闭合。
@@ -87,7 +87,7 @@ dp[i] = dp[i-1] + nums[i] OR dp[i] = nums[i] 那么写出状态转移方程 dp[i
 同种类型括号配对 如 ( ) { } 括号闭合顺序一致 如 ([]) 而不是 (][) 通过分析以上几点我们得出
 这个字符串的长度应该是 2 的倍数
 显而易见，不是 2 的倍数的字符串里的括号一定不闭合
-先出现的括号要在最后闭合</description></item><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao233.github.io/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-21/</guid><description>题目 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例：
+先出现的括号要在最后闭合</description></item><item><title>Leetcode 21 合成有序链表</title><link>https://fzxiao.top/posts/leetcode-21/</link><pubDate>Tue, 27 Oct 2020 20:09:54 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-21/</guid><description>题目 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例：
 输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 思路 &amp;amp;&amp;amp; 题解 这里我马上想到的是遍历
 根据所给条件
 我们遍历两链表
@@ -97,7 +97,7 @@ l1 = l1.Next 为了让新链表升序，我们需要比较当前节点数据的�
 这里可以写出初步框架
 不妨设定头结点为 headNode
 结果链表为 result
-func mergeTowLists(l1 *ListNode, l2 *ListNode) *ListNode { headNode := &amp;amp;ListNode{} result := headNode for l1 != nil &amp;amp;&amp;amp; l2 != nil { if l1.Val &amp;lt;= l2.Val { headNode.Next = &amp;amp;ListNode{Val:l1.Val} l1 = l1.Next } else { headNode.Next = &amp;amp;ListNode{Val:l2.Val} l2 = l2.Next } headNode = headNode.</description></item><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao233.github.io/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-54/</guid><description>背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
+func mergeTowLists(l1 *ListNode, l2 *ListNode) *ListNode { headNode := &amp;amp;ListNode{} result := headNode for l1 != nil &amp;amp;&amp;amp; l2 != nil { if l1.Val &amp;lt;= l2.Val { headNode.Next = &amp;amp;ListNode{Val:l1.Val} l1 = l1.Next } else { headNode.Next = &amp;amp;ListNode{Val:l2.Val} l2 = l2.Next } headNode = headNode.</description></item><item><title>Leetcode 54 螺旋矩阵 附 人生中的第一次面试：字节跳动</title><link>https://fzxiao.top/posts/leetcode-54/</link><pubDate>Tue, 20 Oct 2020 22:35:45 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-54/</guid><description>背景 身为一名大一的学生，却想着投实习简历玩，居然无意命中字节跳动
 于是乎，亲爱的面试官一题螺旋矩阵，让尚未刷题学习的我，成功回家等通知
 多说无意，好好学习，下面看题目
 题目 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
@@ -113,7 +113,7 @@ element = matrix[x][y] 按照要求，我们需要螺旋的遍历这个矩阵
 每次碰到边界，即转向
 循环直至完成遍历
 定义
-矩阵的行数 rows</description></item><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao233.github.io/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao233.github.io/posts/build-blog-by-hugo/</guid><description>前言 既然刚折腾完 Hugo，蹭着记忆还清晰，梳理一下搭建过程吧
+矩阵的行数 rows</description></item><item><title>利用 Github Actions 和 Hugo 搭建自动化构建的静态博客</title><link>https://fzxiao.top/posts/build-blog-by-hugo/</link><pubDate>Sun, 11 Oct 2020 16:05:21 +0800</pubDate><guid>https://fzxiao.top/posts/build-blog-by-hugo/</guid><description>前言 既然刚折腾完 Hugo，蹭着记忆还清晰，梳理一下搭建过程吧
 工具和网站介绍 Hugo:
 号称是世界上最快静态网页构建框架(framework)
 由 Go 编写而成，用于生成我们博客所需的静态页面
@@ -129,14 +129,14 @@ Github:
 Step 1: 安装 Hugo Windows 用户:
 下载:
 前往Releases页面，查找名称类似于 hugo_0.76.3_Windows-64bit.zip 的压缩包，下载解压即可
-请自行确定使用 x64/x86 版本</description></item><item><title>Leetcode 27 移除元素</title><link>https://fzxiao233.github.io/posts/leetcode-27/</link><pubDate>Sat, 10 Oct 2020 19:46:46 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-27/</guid><description>题目 给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+请自行确定使用 x64/x86 版本</description></item><item><title>Leetcode 27 移除元素</title><link>https://fzxiao.top/posts/leetcode-27/</link><pubDate>Sat, 10 Oct 2020 19:46:46 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-27/</guid><description>题目 给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
 解析 先来分享一下题目要求
 通过 原地修改数组 移除所给值 元素顺序可改变 返回数组长度 注：其实数组也是会被判定的，因为传入的是数组的引用 第一解 func removeElement(nums []int, val int) int { for i:=0; i&amp;lt;len(nums); i++{ if nums[i] == val{ nums = append(nums[:i], nums[i+1:]...) } } return len(nums) } 第一次写下了这个解法，遍历数组，如果是需要移除的数，就移除，最后返回数组长度
 毫无疑问，这是个错解
 因为没有考虑移除元素后，指针i已经+1，导致漏过了中间的元素
-第二解 func removeElement(nums []int, val int) int { j := 0 for i:=0; i&amp;lt;len(nums); i++{ if nums[i] !</description></item><item><title>Hello Hugo!</title><link>https://fzxiao233.github.io/posts/hello_hugo/</link><pubDate>Sat, 10 Oct 2020 17:03:53 +0800</pubDate><guid>https://fzxiao233.github.io/posts/hello_hugo/</guid><description>人活着就在于折腾
+第二解 func removeElement(nums []int, val int) int { j := 0 for i:=0; i&amp;lt;len(nums); i++{ if nums[i] !</description></item><item><title>Hello Hugo!</title><link>https://fzxiao.top/posts/hello_hugo/</link><pubDate>Sat, 10 Oct 2020 17:03:53 +0800</pubDate><guid>https://fzxiao.top/posts/hello_hugo/</guid><description>人活着就在于折腾
 我总是把 blog 系统折腾来折腾去，经历了 Wp -&amp;gt; Hexo -&amp;gt; Jeklly -&amp;gt; Hugo
 但是文章却没好好写几篇wwww，这次换到了 Hugo 应该折腾到头了吧
 步入了大一，给自己一个从头开始吧（各种方面的）
