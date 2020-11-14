@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Nov 2020 09:40:11 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>题目 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。 示例 : 给定二叉树 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。 注意：两结点之间的路径长度是以它们之间边的数目表示。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao233.github.io/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao233.github.io/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-136/</guid><description>题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例 1:
+输入: [2,2,1] 输出: 1 示例 2:
+输入: [4,1,2,1,2] 输出: 4 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/single-number 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+分析 我们这次先给出题解，再解释
+class Solution { public int singleNumber(int[] nums) { int t = 0; for (int num : nums) { t = t ^ num; } return t; } } 上述出现的符号 ^ 代表了 异或运算(XOR)
+这个运算的特点是 同值取零 异值取一
+有几个重要的法则
+归零律： a ^ a = 0</description></item><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>题目 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。 示例 : 给定二叉树 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。 注意：两结点之间的路径长度是以它们之间边的数目表示。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 分析 题目给出 二叉树的直径 是 任意两个结点路径长度的最大值
 原问题等价于 求二叉树 以任意结点所能得到的最大路径
 路径长度 等于 该节点的左深度L 与 右深度R 的和 加一（加上当前根节点）

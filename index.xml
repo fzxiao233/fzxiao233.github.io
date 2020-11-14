@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Nov 2020 09:40:11 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao233.github.io/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao233.github.io/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-136/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。&lt;/p>
+&lt;p>说明：&lt;/p>
+&lt;p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？&lt;/p>
+&lt;p>示例 1:&lt;/p>
+&lt;pre>&lt;code>输入: [2,2,1]
+输出: 1
+&lt;/code>&lt;/pre>
+&lt;p>示例 2:&lt;/p>
+&lt;pre>&lt;code>输入: [4,1,2,1,2]
+输出: 4
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/single-number
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分析">分析&lt;/h2>
+&lt;p>我们这次先给出题解，再解释&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">singleNumber&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">t&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">num&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="n">nums&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">t&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">t&lt;/span> &lt;span class="o">^&lt;/span> &lt;span class="n">num&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">t&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>上述出现的符号 ^ 代表了 异或运算(XOR)&lt;/p>
+&lt;p>这个运算的特点是 同值取零 异值取一&lt;/p>
+&lt;p>有几个重要的法则&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>归零律： a ^ a = 0&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>恒等律： a ^ 0 = a&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>交换律： a ^ b ^ c = a ^ c ^ b&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>那么就很好解释了&lt;/p>
+&lt;p>我们从数组 nums 中取出一个 num 与 t 计算的值再赋给 t&lt;/p>
+&lt;p>例如对于数组[2, 2, 1]&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>t&lt;/th>
+&lt;th>num&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>/&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>相同数字异或全归为0&lt;/p>
+&lt;p>剩下 0 与 唯一数异或得到该数字&lt;/p>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>位运算是一类很特别的题目，要多加反复练习&lt;/p></description></item><item><title>Leetcode 543 二叉树的直径</title><link>https://fzxiao233.github.io/posts/leetcode-543/</link><pubDate>Tue, 10 Nov 2020 09:40:11 +0800</pubDate><guid>https://fzxiao233.github.io/posts/leetcode-543/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;pre>&lt;code>给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
  
 示例 :
