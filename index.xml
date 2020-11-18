@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao.top/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-136/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 18 Nov 2020 14:36:31 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 141 环形链表——龟兔赛跑算法的应用</title><link>https://fzxiao.top/posts/leetcode-141/</link><pubDate>Wed, 18 Nov 2020 14:36:31 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-141/</guid><description>&lt;h2 id="龟兔赛跑算法floyd-判圈算法">龟兔赛跑算法（Floyd 判圈算法）&lt;/h2>
+&lt;p>假想有 乌龟 和 兔子 在链表上移动，兔子跑得快，乌龟跑得慢&lt;/p>
+&lt;p>如果乌龟和兔子均从链表上的同一个节点开始运动&lt;/p>
+&lt;p>当该链表有环时，兔子由于跑的快，会先进入环内开始循环，乌龟后进入环内&lt;/p>
+&lt;p>此时，总有一时刻，兔子会与乌龟相遇&lt;/p>
+&lt;p>如果该链表无环，兔子会先走出该链表&lt;/p>
+&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>给定一个链表，判断链表中是否有环。&lt;/p>
+&lt;p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。&lt;/p>
+&lt;p>如果链表中存在环，则返回 true 。 否则，返回 false 。&lt;/p>
+&lt;p> &lt;/p>
+&lt;p>进阶：&lt;/p>
+&lt;p>你能用 O(1)（即，常量）内存解决此问题吗？&lt;/p>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/linked-list-cycle
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分析">分析&lt;/h2>
+&lt;p>上面介绍了龟兔赛跑算法，这里我们就来实际使用一下&lt;/p>
+&lt;p>我们定义两个指针，分别是快指针 fast 和慢指针 slow 作为 兔子 和 乌龟&lt;/p>
+&lt;p>让 slow 指向链表头部， fast 指向头部的下一节点（为什么?）&lt;/p>
+&lt;p>当 slow 不等于 fast 时&lt;/p>
+&lt;p>让 slow 指针前进一个节点（乌龟跑得慢）&lt;/p>
+&lt;p>fast 指针前进两个节点（兔子跑得快）&lt;/p>
+&lt;p>如果有一刻，slow 等于 fast 则链表有环&lt;/p>
+&lt;p>否则无环&lt;/p>
+&lt;p>下面实现代码&lt;/p>
+&lt;h2 id="题解">题解&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="cm">/**
+&lt;/span>&lt;span class="cm"> * Definition for singly-linked list.
+&lt;/span>&lt;span class="cm"> * class ListNode {
+&lt;/span>&lt;span class="cm"> * int val;
+&lt;/span>&lt;span class="cm"> * ListNode next;
+&lt;/span>&lt;span class="cm"> * ListNode(int x) {
+&lt;/span>&lt;span class="cm"> * val = x;
+&lt;/span>&lt;span class="cm"> * next = null;
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">boolean&lt;/span> &lt;span class="nf">hasCycle&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">slow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">fast&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">while&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">fast&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">slow&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">fast&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">fast&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">slow&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">slow&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">fast&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">fast&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>由于我们 while 循环的条件是 slow != fast 故我们让 fast 为 head 的下一节点，否则循环不会进入&lt;/p>
+&lt;p>这个题解就是使用了 O(1) 的内存空间&lt;/p>
+&lt;p>下面我们看一个使用 O(n) n 表示链表节点总数的方法&lt;/p>
+&lt;p>我们使用一个 hash 表来存储已访问过的节点&lt;/p>
+&lt;p>每次取到新节点时，判断节点是否存在于表中&lt;/p>
+&lt;p>如在，则链表有环&lt;/p>
+&lt;p>否则无环&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">boolean&lt;/span> &lt;span class="nf">hasCycle&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">var&lt;/span> &lt;span class="n">nodes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">HashMap&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">ListNode&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">Integer&lt;/span>&lt;span class="o">&amp;gt;();&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">nodes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">containsKey&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">))&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">nodes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">put&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">1&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>相比上一算法，这个方法比较粗暴，不具有优越性&lt;/p></description></item><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao.top/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-136/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。&lt;/p>
 &lt;p>说明：&lt;/p>
 &lt;p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？&lt;/p>

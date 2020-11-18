@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 16:48:42 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao.top/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-136/</guid><description>题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 18 Nov 2020 14:36:31 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 141 环形链表——龟兔赛跑算法的应用</title><link>https://fzxiao.top/posts/leetcode-141/</link><pubDate>Wed, 18 Nov 2020 14:36:31 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-141/</guid><description>龟兔赛跑算法（Floyd 判圈算法） 假想有 乌龟 和 兔子 在链表上移动，兔子跑得快，乌龟跑得慢
+如果乌龟和兔子均从链表上的同一个节点开始运动
+当该链表有环时，兔子由于跑的快，会先进入环内开始循环，乌龟后进入环内
+此时，总有一时刻，兔子会与乌龟相遇
+如果该链表无环，兔子会先走出该链表
+题目 给定一个链表，判断链表中是否有环。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+如果链表中存在环，则返回 true 。 否则，返回 false 。
+ 进阶：
+你能用 O(1)（即，常量）内存解决此问题吗？
+来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/linked-list-cycle 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+分析 上面介绍了龟兔赛跑算法，这里我们就来实际使用一下
+我们定义两个指针，分别是快指针 fast 和慢指针 slow 作为 兔子 和 乌龟
+让 slow 指向链表头部， fast 指向头部的下一节点（为什么?）
+当 slow 不等于 fast 时
+让 slow 指针前进一个节点（乌龟跑得慢）
+fast 指针前进两个节点（兔子跑得快）
+如果有一刻，slow 等于 fast 则链表有环</description></item><item><title>Leetcode 136 只出现一次的数字(位运算)</title><link>https://fzxiao.top/posts/leetcode-136/</link><pubDate>Sat, 14 Nov 2020 16:48:42 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-136/</guid><description>题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 说明：
 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 示例 1:
