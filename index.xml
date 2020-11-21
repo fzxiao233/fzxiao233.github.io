@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 18 Nov 2020 15:12:57 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 160 相交链表</title><link>https://fzxiao.top/posts/leetcode-160/</link><pubDate>Wed, 18 Nov 2020 15:12:57 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-160/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 21 Nov 2020 14:59:58 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 206 反转链表</title><link>https://fzxiao.top/posts/leetcode-206/</link><pubDate>Sat, 21 Nov 2020 14:59:58 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-206/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>反转一个单链表。&lt;/p>
+&lt;p>示例:&lt;/p>
+&lt;pre>&lt;code>输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
+&lt;/code>&lt;/pre>
+&lt;p>进阶:&lt;/p>
+&lt;p>你可以迭代或递归地反转链表。你能否用两种方法解决这道题？&lt;/p>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/reverse-linked-list
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="一解迭代法">一解(迭代法)&lt;/h2>
+&lt;p>使用一个辅助栈&lt;/p>
+&lt;p>先将链表内所有节点放入辅助栈中，因为栈是先入后出的，所以在取出的时候能够自然的将链表反转&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="cm">/**
+&lt;/span>&lt;span class="cm"> * Definition for singly-linked list.
+&lt;/span>&lt;span class="cm"> * public class ListNode {
+&lt;/span>&lt;span class="cm"> * int val;
+&lt;/span>&lt;span class="cm"> * ListNode next;
+&lt;/span>&lt;span class="cm"> * ListNode(int x) { val = x; }
+&lt;/span>&lt;span class="cm"> * }
+&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="n">ListNode&lt;/span> &lt;span class="nf">reverseList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">Stack&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">ListNode&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">stack&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">Stack&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">ListNode&lt;/span>&lt;span class="o">&amp;gt;();&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">push&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">q&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">res&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">while&lt;/span>&lt;span class="o">(!&lt;/span>&lt;span class="n">stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">isEmpty&lt;/span>&lt;span class="o">())&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">stack&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">pop&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">q&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">res&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">q&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">continue&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">q&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">q&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">q&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">res&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>显然不需要辅助栈也能实现&lt;/p>
+&lt;p>我们定义两个变量&lt;/p>
+&lt;p>prev 和 curr 分别表示前一个节点和当前节点&lt;/p>
+&lt;p>当 curr 不是 null 即链表未到底时，循环的将 curr.next 指定为上一元素 prev&lt;/p>
+&lt;p>并将当前元素放入上一元素 将当前元素的下一元素(curr.next) 存入当前元素(curr)&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="n">ListNode&lt;/span> &lt;span class="nf">reverseList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">prev&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">curr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">while&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">curr&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">ListNode&lt;/span> &lt;span class="n">tempNode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">curr&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">curr&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">prev&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">prev&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">curr&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">curr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tempNode&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">prev&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="二解递归法">二解(递归法)&lt;/h2>
+&lt;p>看一个例子&lt;/p>
+&lt;p>有这么一个链表&lt;/p>
+&lt;pre>&lt;code>1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; null
+&lt;/code>&lt;/pre>
+&lt;p>当递归到最底前 即 head.next == null 时，我们返回当前节点&lt;/p>
+&lt;p>此时的 head = 3&lt;/p>
+&lt;p>返回后，此时 head = 2&lt;/p>
+&lt;p>我们要将链表反转也就是需要将 3 指向 2&lt;/p>
+&lt;p>只需 head.next.next = head&lt;/p>
+&lt;p>即&lt;/p>
+&lt;pre>&lt;code>2 -&amp;gt; 3 -&amp;gt; 2
+&lt;/code>&lt;/pre>
+&lt;p>此时链表发生循环，还需要&lt;/p>
+&lt;p>head.next = null&lt;/p>
+&lt;p>即&lt;/p>
+&lt;pre>&lt;code>3 -&amp;gt; 2 -&amp;gt; null
+&lt;/code>&lt;/pre>
+&lt;p>完整代码如下&lt;/p>
+&lt;p>别忘了考虑链表为空的情况&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="nf">reverseList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">ListNode&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">head&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="n">Listnode&lt;/span> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">reverseList&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">head&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="n">head&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">next&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">p&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Leetcode 160 相交链表</title><link>https://fzxiao.top/posts/leetcode-160/</link><pubDate>Wed, 18 Nov 2020 15:12:57 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-160/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>编写一个程序，找到两个单链表相交的起始节点。&lt;/p>
 &lt;p>注意：&lt;/p>
 &lt;ul>
