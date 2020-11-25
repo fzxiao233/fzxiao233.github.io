@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 21 Nov 2020 15:37:05 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 06. 从尾到头打印链表</title><link>https://fzxiao.top/posts/offer-06/</link><pubDate>Sat, 21 Nov 2020 15:37:05 +0800</pubDate><guid>https://fzxiao.top/posts/offer-06/</guid><description>题目 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 14:48:34 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指Offer 03 数组中的重复数字</title><link>https://fzxiao.top/posts/offer-03/</link><pubDate>Wed, 25 Nov 2020 14:48:34 +0800</pubDate><guid>https://fzxiao.top/posts/offer-03/</guid><description>题目 找出数组中重复的数字。
+在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
+示例 1：
+输入： [2, 3, 1, 0, 2, 5, 3] 输出：2 或 3 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+一解(排序法) 先将数组排序，那么重复的数字必然排在一起
+class Solution { public int findRepeatNumber(int[] nums) { Arrays.sort(nums); for(int i = 1; i &amp;lt; nums.length; i++) { if(nums[i] == nums[i-1]) { return nums[i]; } } return -1; } } 对应数组法 构造一个新数组，用于存储已经找到的值
+如果值已存在，那该数重复
+class Solution { public int findRepeatNumber(int[] nums) { int[] mapNums = new int[nums.</description></item><item><title>剑指Offer 05 替换空格——StringBuilder的应用</title><link>https://fzxiao.top/posts/offer-05/</link><pubDate>Wed, 25 Nov 2020 14:46:31 +0800</pubDate><guid>https://fzxiao.top/posts/offer-05/</guid><description>题目 请实现一个函数，把字符串 s 中的每个空格替换成&amp;quot;%20&amp;quot;。
+ 示例 1：
+输入：s = &amp;quot;We are happy.&amp;quot; 输出：&amp;quot;We%20are%20happy.&amp;quot; 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+题解 利用 StringBuilder 来构造字符串
+如果对应字符为' ' 则换为 &amp;ldquo;%20&amp;rdquo;
+class Solution { public String replaceSpace(String s) { var sb = new StringBuilder(); for(int i = 0; i &amp;lt; s.length(); i++) { if(s.charAt(i) != &amp;#39; &amp;#39;) { sb.append(s.charAt(i)); } else { sb.append(&amp;#34;%20&amp;#34;); } } return sb.toString(); } }</description></item><item><title>剑指 Offer 06. 从尾到头打印链表</title><link>https://fzxiao.top/posts/offer-06/</link><pubDate>Sat, 21 Nov 2020 15:37:05 +0800</pubDate><guid>https://fzxiao.top/posts/offer-06/</guid><description>题目 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
 示例 1：
 输入：head = [1,3,2] 输出：[2,3,1] 一解(辅助栈法) 思路简单，栈先进后出
 将元素全放入栈后
