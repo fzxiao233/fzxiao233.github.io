@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 14:48:34 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指Offer 03 数组中的重复数字</title><link>https://fzxiao.top/posts/offer-03/</link><pubDate>Wed, 25 Nov 2020 14:48:34 +0800</pubDate><guid>https://fzxiao.top/posts/offer-03/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FZxiao 的大仓库</title><link>https://fzxiao.top/</link><description>Recent content on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 03 Dec 2020 19:53:41 +0800</lastBuildDate><atom:link href="https://fzxiao.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode每日一题 204 计数质数</title><link>https://fzxiao.top/posts/leetcode-204/</link><pubDate>Thu, 03 Dec 2020 19:53:41 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-204/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+&lt;p>统计所有小于非负整数 n 的质数的数量。&lt;/p>
+&lt;p> &lt;/p>
+&lt;p>示例 1：&lt;/p>
+&lt;pre>&lt;code>输入：n = 10
+输出：4
+解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/count-primes
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="题解">题解&lt;/h2>
+&lt;h3 id="暴力法">暴力法&lt;/h3>
+&lt;p>质数的定义：一个大于 1 的只能被 1 和它本身整除的整数&lt;/p>
+&lt;p>那么只需要让这个数 x 与 [2, x-1] 内的所有整数取模，计数模等于 0 的次数&lt;/p>
+&lt;p>如果次数为零，则它为质数，否则为素数&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">countPrimes&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">2&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">t&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">2&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">c&lt;/span>&lt;span class="o">++)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">t&lt;/span>&lt;span class="o">++;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">t&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">count&lt;/span>&lt;span class="o">++;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">count&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个方法的时间复杂度为 O(n)， 当 n 很大的时候，无法短时间内完成&lt;/p>
+&lt;h3 id="埃氏筛法">埃氏筛法&lt;/h3>
+&lt;p>埃氏筛提出一个观点&lt;/p>
+&lt;p>如果 i 是一个质数，那么大于 i 的 i 的倍数一定不是质数&lt;/p>
+&lt;p>那么，我们从 2 开始，如果该数是质数(显然 2 是质数)就将比 2 大的 2 的倍数标记为合数&lt;/p>
+&lt;p>最好计数未标记数即可&lt;/p>
+&lt;p>这个方法还有优化的空间&lt;/p>
+&lt;p>因为 i 的倍数 2x 3x 在标记前一定被之前的标记回中标记过了&lt;/p>
+&lt;p>所以，我们可以从 x^2 开始标记&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-Java" data-lang="Java">&lt;span class="kd">class&lt;/span> &lt;span class="nc">Solution&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="nf">countPrimes&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">boolean&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="kt">boolean&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="o">];&lt;/span>
+&lt;span class="n">Arrays&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">fill&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">2&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="o">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">for&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">result&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="o">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="kt">int&lt;/span> &lt;span class="n">count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">0&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">2&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="o">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="o">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">count&lt;/span>&lt;span class="o">++;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="n">count&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了思路，代码很简单&lt;/p>
+&lt;h2 id="吐槽">吐槽&lt;/h2>
+&lt;p>这个每日一题怎么写个简单啊，只有暴力法简单好吗！&lt;/p></description></item><item><title>剑指Offer 03 数组中的重复数字</title><link>https://fzxiao.top/posts/offer-03/</link><pubDate>Wed, 25 Nov 2020 14:48:34 +0800</pubDate><guid>https://fzxiao.top/posts/offer-03/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>找出数组中重复的数字。&lt;/p>
 &lt;p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。&lt;/p>
 &lt;p>示例 1：&lt;/p>
