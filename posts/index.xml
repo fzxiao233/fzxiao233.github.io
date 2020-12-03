@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 03 Dec 2020 19:53:41 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode每日一题 204 计数质数</title><link>https://fzxiao.top/posts/leetcode-204/</link><pubDate>Thu, 03 Dec 2020 19:53:41 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-204/</guid><description>题目 统计所有小于非负整数 n 的质数的数量。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on FZxiao 的大仓库</title><link>https://fzxiao.top/posts/</link><description>Recent content in Posts on FZxiao 的大仓库</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 03 Dec 2020 20:32:30 +0800</lastBuildDate><atom:link href="https://fzxiao.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 155 最小栈</title><link>https://fzxiao.top/posts/leetcode-155/</link><pubDate>Thu, 03 Dec 2020 20:32:30 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-155/</guid><description>题目 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+push(x) —— 将元素 x 推入栈中。
+pop() —— 删除栈顶的元素。
+top() —— 获取栈顶元素。
+getMin() —— 检索栈中的最小元素。 示例:
+输入： [&amp;quot;MinStack&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;getMin&amp;quot;,&amp;quot;pop&amp;quot;,&amp;quot;top&amp;quot;,&amp;quot;getMin&amp;quot;] [[],[-2],[0],[-3],[],[],[],[]] 输出： [null,null,null,null,-3,null,0,-2] 解释：
+MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); --&amp;gt; 返回 -3. minStack.pop(); minStack.top(); --&amp;gt; 返回 0. minStack.getMin(); --&amp;gt; 返回 -2.  提示：
+pop、top 和 getMin 操作总是在 非空栈 上调用。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/min-stack 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+题解 用链表实现栈
+在 push 和 pop 的时候生成最小元素存入 minELe 中</description></item><item><title>Leetcode每日一题 204 计数质数</title><link>https://fzxiao.top/posts/leetcode-204/</link><pubDate>Thu, 03 Dec 2020 19:53:41 +0800</pubDate><guid>https://fzxiao.top/posts/leetcode-204/</guid><description>题目 统计所有小于非负整数 n 的质数的数量。
  示例 1：
 输入：n = 10 输出：4 解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/count-primes 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 题解 暴力法 质数的定义：一个大于 1 的只能被 1 和它本身整除的整数
