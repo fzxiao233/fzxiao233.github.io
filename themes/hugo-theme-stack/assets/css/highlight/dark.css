@@ -1,17 +1,16 @@
 /*
-*   Style: monokai
-*   https://xyproto.github.io/splash/docs/monokai.html
+*   Style: monokailight
+*   https://xyproto.github.io/splash/docs/monokailight.html
 */
-
 :root {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: #272822;
+    --pre-text-color: #272822;
+    --pre-background-color: #fafafa;
 }
 
 /* Background */
 .chroma {
-    color: #f8f8f2;
-    background-color: #272822
+    color: #272822;
+    background-color: #fafafa;
 }
 
 /* Other */
@@ -65,17 +64,17 @@
 
 /* Keyword */
 .chroma .k {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* KeywordConstant */
 .chroma .kc {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* KeywordDeclaration */
 .chroma .kd {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* KeywordNamespace */
@@ -85,77 +84,93 @@
 
 /* KeywordPseudo */
 .chroma .kp {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* KeywordReserved */
 .chroma .kr {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* KeywordType */
 .chroma .kt {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* Name */
-.chroma .n {}
+.chroma .n {
+    color: #111111
+}
 
 /* NameAttribute */
 .chroma .na {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameBuiltin */
-.chroma .nb {}
+.chroma .nb {
+    color: #111111
+}
 
 /* NameBuiltinPseudo */
-.chroma .bp {}
+.chroma .bp {
+    color: #111111
+}
 
 /* NameClass */
 .chroma .nc {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameConstant */
 .chroma .no {
-    color: #66d9ef
+    color: #00a8c8
 }
 
 /* NameDecorator */
 .chroma .nd {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameEntity */
-.chroma .ni {}
+.chroma .ni {
+    color: #111111
+}
 
 /* NameException */
 .chroma .ne {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameFunction */
 .chroma .nf {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameFunctionMagic */
-.chroma .fm {}
+.chroma .fm {
+    color: #111111
+}
 
 /* NameLabel */
-.chroma .nl {}
+.chroma .nl {
+    color: #111111
+}
 
 /* NameNamespace */
-.chroma .nn {}
+.chroma .nn {
+    color: #111111
+}
 
 /* NameOther */
 .chroma .nx {
-    color: #a6e22e
+    color: #75af00
 }
 
 /* NameProperty */
-.chroma .py {}
+.chroma .py {
+    color: #111111
+}
 
 /* NameTag */
 .chroma .nt {
@@ -163,19 +178,29 @@
 }
 
 /* NameVariable */
-.chroma .nv {}
+.chroma .nv {
+    color: #111111
+}
 
 /* NameVariableClass */
-.chroma .vc {}
+.chroma .vc {
+    color: #111111
+}
 
 /* NameVariableGlobal */
-.chroma .vg {}
+.chroma .vg {
+    color: #111111
+}
 
 /* NameVariableInstance */
-.chroma .vi {}
+.chroma .vi {
+    color: #111111
+}
 
 /* NameVariableMagic */
-.chroma .vm {}
+.chroma .vm {
+    color: #111111
+}
 
 /* Literal */
 .chroma .l {
@@ -184,77 +209,77 @@
 
 /* LiteralDate */
 .chroma .ld {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralString */
 .chroma .s {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringAffix */
 .chroma .sa {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringBacktick */
 .chroma .sb {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringChar */
 .chroma .sc {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringDelimiter */
 .chroma .dl {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringDoc */
 .chroma .sd {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringDouble */
 .chroma .s2 {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringEscape */
 .chroma .se {
-    color: #ae81ff
+    color: #8045ff
 }
 
 /* LiteralStringHeredoc */
 .chroma .sh {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringInterpol */
 .chroma .si {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringOther */
 .chroma .sx {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringRegex */
 .chroma .sr {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringSingle */
 .chroma .s1 {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralStringSymbol */
 .chroma .ss {
-    color: #e6db74
+    color: #d88200
 }
 
 /* LiteralNumber */
@@ -303,7 +328,9 @@
 }
 
 /* Punctuation */
-.chroma .p {}
+.chroma .p {
+    color: #111111
+}
 
 /* Comment */
 .chroma .c {
@@ -344,9 +371,7 @@
 .chroma .g {}
 
 /* GenericDeleted */
-.chroma .gd {
-    color: #f92672
-}
+.chroma .gd {}
 
 /* GenericEmph */
 .chroma .ge {
@@ -360,9 +385,7 @@
 .chroma .gh {}
 
 /* GenericInserted */
-.chroma .gi {
-    color: #a6e22e
-}
+.chroma .gi {}
 
 /* GenericOutput */
 .chroma .go {}
@@ -376,9 +399,7 @@
 }
 
 /* GenericSubheading */
-.chroma .gu {
-    color: #75715e
-}
+.chroma .gu {}
 
 /* GenericTraceback */
 .chroma .gt {}
